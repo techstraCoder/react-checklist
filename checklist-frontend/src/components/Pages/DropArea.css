@@ -1,0 +1,39 @@
+.drop_area{
+    width: 100%;
+    height: 125px;
+    opacity: 1;
+    border:1px solid dashed rgb(94, 90, 90);
+}
+
+.hide_area {
+    opacity: 0;
+    height: 15px;
+    display: block;
+   
+}
+.gray-200 {
+    background-color: rgb(39 99 195 / 95%) !important;
+  }
+
+.cards-box-shadow-ss{
+    background: #4b6cb7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+}
+
+.bg-light {
+    color:white !important;
+    background: #00d2ff;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff) !important;  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3a7bd5, #15a3c1) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.bg-body{
+    background: #c21500;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ffc500, #c21500);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ffc500, #c21500); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

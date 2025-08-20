@@ -1,0 +1,64 @@
+.activitymessages {
+    min-height: 50px;
+    line-height: 11px;
+}
+
+.activitymessages>p:nth-child(2) {
+    font-size: 13px;
+    line-height: 1px;
+}
+
+.loadMore {
+    color: #0263ff;
+    background: rgba(245, 245, 245, 1);
+    border: 0px solid transparent;
+    outline: none !important;
+}
+
+.accordion-item {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transition: all .2s ease;
+    max-height: 50%;
+    z-index: 999 !important;
+    width: 100%;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+}
+
+.accordion-button {
+    height: 50px;
+    border-radius: 0 !important;
+    position: relative;
+    top: -22px;
+    font-weight: bold;
+    margin-bottom: -22px;
+    background-color: rgba(230, 230, 230, 1);
+    color: rgba(102, 102, 102, 1);
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    background: rgba(210, 210, 210, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    height: 50px;
+    color: rgba(102, 102, 102, 1);
+    font-weight: bold;
+}
+
+.accordion-body {
+    background: rgba(245, 245, 245, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 300px;
+}
+
+.bg-body-secondary {
+    background: transparent !important;
+}
+
+.loadMore {
+    padding: 0 !important;
+    margin-top: 0 !important;
+}

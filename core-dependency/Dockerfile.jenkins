@@ -1,0 +1,11 @@
+FROM jenkins/jenkins:lts
+
+# Install Docker CLI (optional)
+USER root
+RUN apt-get update && apt-get install -y docker.io
+
+# Create docker group and add Jenkins user to it
+RUN usermod -aG docker bencoder
+
+# Switch back to Jenkins user
+USER bencoder

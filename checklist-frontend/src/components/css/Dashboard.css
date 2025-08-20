@@ -1,0 +1,5 @@
+.dropdown:hover .dropdown-menu {display: block;right:-6px;}
+.navbar-expand-lg .navbar-nav .dropdown-menu{left:-80px !important;}
+
+.modal-width{width:80% !important;}
+.editingcard{display: block !important;border:1px solid black !important;border-radius: 5px;}
