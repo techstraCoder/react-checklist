@@ -1,11 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Compose Up') {
+    stage('Check Docker') {
       steps {
-        sh 'docker composer -v'
-        sh 'docker compose up -d' 
+        dir('core-dependency') {
+          sh 'docker compose -v'
+          sh 'docker-compose up -d --build'
+        }
       }
+    }
+    success {
+      echo 'Pipeline succeeded!'
+    }
+    failure {
+      echo 'Pipeline failed!'
     }
   }
 }
