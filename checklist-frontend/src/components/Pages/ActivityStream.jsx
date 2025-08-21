@@ -24,7 +24,7 @@ const ActivityStream = ({ activitymessages, activityCount, loadmore }) => {
                         type="button"
                         onClick={toggleAccordion}
                     >
-                        Activity Stream
+                        Activity Stream New
                     </button>
                     <div
                         id="collapseOne"
