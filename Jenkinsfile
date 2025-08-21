@@ -5,8 +5,8 @@ pipeline {
     stage('Deploy with Docker Compose') {
       steps {
         dir('core-dependency') {
-          sh 'docker-compose down'
-          sh 'docker-compose up -d'
+          sh '/usr/local/bin/docker-compose down'
+          sh '/usr/local/bin/docker-compose up -d'
         }
       }
     }
