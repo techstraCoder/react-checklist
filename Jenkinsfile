@@ -1,16 +1,19 @@
 pipeline {
-  agent {
-    docker {
-      image 'docker:latest'
-      args '-v /var/run/docker.sock:/var/run/docker.sock'
-    }
-  }
+  agent any
   stages {
-    stage('Compose Up') {
+    stage('Check Docker') {
       steps {
-        sh 'apk add docker-compose'         // or install compose in Dockerfile
-        sh 'docker-compose up -d --build'
+        dir('core-dependency') {
+          sh 'docker-compose down'
+          sh 'docker-compose up -d'
+        }
       }
+    }
+    success {
+      echo 'Pipeline succeeded!'
+    }
+    failure {
+      echo 'Pipeline failed!'
     }
   }
 }
