@@ -1,7 +1,8 @@
 pipeline {
   agent any
+
   stages {
-    stage('Check Docker') {
+    stage('Deploy with Docker Compose') {
       steps {
         dir('core-dependency') {
           sh 'docker-compose down'
@@ -9,6 +10,9 @@ pipeline {
         }
       }
     }
+  }
+
+  post {
     success {
       echo 'Pipeline succeeded!'
     }
@@ -17,3 +21,4 @@ pipeline {
     }
   }
 }
+
