@@ -6,8 +6,8 @@ pipeline {
       steps {
         dir('core-dependency') {
           sh 'docker-compose --version'
-          sh 'docker compose stop react-php'
-          sh 'docker compose stop react-app' 
+          sh 'docker-compose stop react-php'
+          sh 'docker-compose stop react-app' 
         }
       }
     }
@@ -22,8 +22,8 @@ pipeline {
       sh 'docker network rm core-dependency_checklist-v2-networks || true'
 
       // 3. Rebuild and restart only necessary services
-      sh 'docker compose up --no-deps --build -d react-php'
-      sh 'docker compose up --no-deps --build -d react-app'
+      sh 'docker-compose up -d react-php'
+      sh 'docker-compose up -d react-app'
       }
     }
     success {
