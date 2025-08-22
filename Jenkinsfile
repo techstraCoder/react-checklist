@@ -14,7 +14,7 @@ pipeline {
   }
   post {
     always {
-      echo 'Cleaning up Docker Compose rebuilding'
+      echo 'Cleaning up Docker Compose rebuilding Containers'
       dir('core-dependency') {
         sh 'docker-compose up --no-deps --build -d react-php'
         sh 'docker-compose up --no-deps --build -d react-app'
