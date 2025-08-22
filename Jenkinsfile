@@ -8,6 +8,7 @@ pipeline {
           sh 'docker-compose --version'
           sh 'docker-compose stop react-php || true'
           sh 'docker-compose stop react-app || true'
+           sh 'docker-compose stop react-mysql || true'
         }
       }
     }
@@ -18,14 +19,13 @@ pipeline {
       echo 'Cleaning up and rebuilding Docker Compose containers'
 
       dir('core-dependency') {
-        // 1. Tear down all services and remove orphans
-        sh 'docker-compose down --remove-orphans || true'
+        // 1. Tear down all services and remove orphan
 
         // 2. Force remove network if stale
         sh 'docker network rm core-dependency_checklist-v2-networks || true'
 
         // 3. Restart necessary services cleanly
-        sh 'docker-compose up -d react-php react-app'
+        sh 'docker-compose up -d react-php react-app react-mysql'
       }
     }
     success {
