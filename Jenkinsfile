@@ -16,7 +16,7 @@ pipeline {
     always {
       echo 'Cleaning up Docker Compose...'
       dir('core-dependency') {
-        sh 'docker-compose up -d'
+        sh 'docker-compose up -d --force-recreate'
       }
     }
     success {
