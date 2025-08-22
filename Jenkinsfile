@@ -6,7 +6,7 @@ pipeline {
       steps {
         dir('core-dependency') {
           sh 'docker-compose --version'
-          sh 'docker-compose up -d'
+          sh 'docker-compose down'
         }
       }
     }
@@ -16,7 +16,7 @@ pipeline {
     always {
       echo 'Cleaning up Docker Compose...'
       dir('core-dependency') {
-        sh 'docker-compose down'
+        sh 'docker-compose up -d'
       }
     }
     success {
