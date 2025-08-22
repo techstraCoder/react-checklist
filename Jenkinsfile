@@ -17,7 +17,6 @@ pipeline {
       echo 'Cleaning up Docker Compose rebuilding Containers'
       dir('core-dependency') {
         // 1. Tear down all services and remove orphaned resources
-      sh 'docker compose down --remove-orphans || true'
 
       // 2. Clean up lingering network if still present
       sh 'docker network rm core-dependency_checklist-v2-networks || true'
