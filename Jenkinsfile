@@ -15,10 +15,10 @@ pipeline {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
       dir('core-dependency') {
-        // 3a. Poll until no lingering compose project resources
-        
-        // 3c. Bring services back up
-        sh 'docker-compose up --force-recreate --remove-orphans -d react-app'
+        sh '''
+          export COMPOSE_IGNORE_ORPHANS=true
+          docker-compose up --force-recreate -d react-app
+        '''
       }
     }
     success {
