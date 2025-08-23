@@ -1,31 +1,36 @@
 pipeline {
   agent any
-
   stages {
     stage('Deploy with Docker Compose') {
       steps {
         dir('core-dependency') {
           sh 'docker-compose --version'
-          sh 'docker-compose stop react-php || true'
-          sh 'docker-compose stop react-app || true'
-           sh 'docker-compose stop react-mysql || true'
+          // 1. Tear down existing services and orphans
+          sh 'docker-compose down --remove-orphans'
+          // 2. Attempt to remove stale network
+          sh 'docker network rm core-dependency_checklist-v2-networks || true'
         }
       }
     }
   }
-
   post {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
-
       dir('core-dependency') {
-        // 1. Tear down all services and remove orphan
+        // 3a. Poll until no lingering compose project resources
+        sh '''
+        PROJECT="core-dependency"
+        until [ -z "$(docker network ls --filter label=com.docker.compose.project="${PROJECT}" -q)" ]; do
+          echo "Waiting for existing networks to clear..."
+          sleep 2
+        done
+        '''
 
-        // 2. Force remove network if stale
-        sh 'docker network rm core-dependency_checklist-v2-networks || true'
+        // 3b. Use docker system prune as fallback
+        sh 'docker system prune -af'
 
-        // 3. Restart necessary services cleanly
-        sh 'docker-compose up -d react-php react-app react-mysql'
+        // 3c. Bring services back up
+        sh 'docker-compose up -d'
       }
     }
     success {
@@ -36,5 +41,6 @@ pipeline {
     }
   }
 }
+
 
 
