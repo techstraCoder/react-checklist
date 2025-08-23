@@ -7,8 +7,6 @@ pipeline {
           sh 'docker-compose --version'
           sh 'docker-compose stop react-app'
           sh 'docker-compose rm -f react-app'
-          sh 'docker-compose down --remove-orphans'
-          sh 'docker network rm core-dependency_checklist-v2-networks || true'
         }
       }
     }
@@ -20,7 +18,7 @@ pipeline {
         // 3a. Poll until no lingering compose project resources
         
         // 3c. Bring services back up
-        sh 'docker-compose up --force-recreate -d'
+        sh 'docker-compose up --force-recreate -d reac-app'
       }
     }
     success {
