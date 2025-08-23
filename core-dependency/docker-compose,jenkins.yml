@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  react-jenkins:
+    build:
+      context: .
+      dockerfile: Dockerfile.jenkins
+    container_name: checklist-v2-jenkins  
+    ports:
+      - 8080:8080
+      - 50000:50000
+    environment:
+      - JENKINS_OPTS=--prefix=/jenkins
+    volumes:
+      - ./jenkins_checklistv2_data:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - checklist-v2-networks
+    user: root        
+networks:
+  checklist-v2-networks:
+    driver: bridge
