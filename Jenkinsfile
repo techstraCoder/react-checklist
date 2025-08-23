@@ -18,7 +18,7 @@ pipeline {
         // 3a. Poll until no lingering compose project resources
         
         // 3c. Bring services back up
-        sh 'docker-compose up --force-recreate -d react-app'
+        sh 'docker-compose up --force-recreate -d'
       }
     }
     success {
