@@ -7,6 +7,8 @@ pipeline {
           sh 'docker-compose --version'
           sh 'docker-compose stop react-app'
           sh 'docker-compose rm -f react-app'
+          sh 'docker-compose down --remove-orphans'
+          sh 'docker network rm core-dependency_checklist-v2-networks || true'
         }
       }
     }
