@@ -14,7 +14,7 @@ pipeline {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
       dir('core-dependency') {
-        sh 'nvm --version'
+        sh 'dokcer-compose up -d'
       }
     }
     success {
