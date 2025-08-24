@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('Deploy with Docker Compose') {
       steps {
-        dir('core-dependency') {
+        dir('checklist-frontend') {
           sh 'docker-compose --version'
-          sh 'npm --version'
+          sh 'docker build --no-cache .'
         }
       }
     }
