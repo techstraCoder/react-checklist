@@ -102,7 +102,7 @@ function Login() {
                         <Form className="Loginform" onSubmit={loginformdetails} ref={loginform}>
                             <Row className="fw-bold border-bottom border-black mb-2">
                                 <Col md={12}>
-                                    <h3><b>Checklist+ Login Bencoder</b></h3>
+                                    <h3><b>Checklist+</b></h3>
                                 </Col>
                             </Row>
                             <Row className="d-flex justify-content-center mt-1 mb-2 col-sm-11 col-md-11 col-lg-11">
