@@ -14,7 +14,7 @@ pipeline {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
       dir('core-dependency') {
-        sh 'docker container restart -t 30 checklist-v2'
+        sh 'docker-compose up -d'
       }
     }
     success {
