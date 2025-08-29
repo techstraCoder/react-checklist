@@ -14,7 +14,7 @@ pipeline {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
       dir('core-dependency') {
-        sh 'docker compose up --watch'
+        sh 'docker compose up --build -d'
       }
     }
     success {
