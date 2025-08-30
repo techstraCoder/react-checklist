@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('Deploy with Docker Compose') {
       steps {
-        dir('checklist-frontend') {
+        dir('core-dependency') {
           sh 'docker-compose --version'
-          sh 'docker build --no-cache .'
+          sh 'docker-compose up -d react-app'
         }
       }
     }
@@ -14,7 +14,7 @@ pipeline {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
       dir('core-dependency') {
-        sh 'docker compose up -d --remove-orphans'
+        echo 'DOne'
       }
     }
     success {
