@@ -158,7 +158,7 @@ function Login() {
                                 <Col lg={4} className="mt-1 text-credits-small">
                                     <div className="text-sm-start">Arpitha BM (Project Manager)</div>
                                     <div className="text-sm-start">Usharani K. (Lead Developer)</div>
-                                    <div className="text-sm-start">Ayon Banerjee (Jr.Developer) </div>
+                                    <div className="text-sm-start">Ayon Banerjee (Sr.Developer) </div>
                                 </Col>
                                 <Col lg={4} className="mt-1 text-credits-small">
                                     <div className="text-sm-start">Nikhil Nath (Developer)</div>
