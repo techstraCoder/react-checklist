@@ -5,7 +5,6 @@ pipeline {
       steps {
         dir('core-dependency') {
           sh 'docker-compose --version'
-          sh 'docker compose -f docker-compose.yml down'
         }
       }
     }
@@ -14,7 +13,7 @@ pipeline {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
       dir('core-dependency') {
-        sh 'docker compose -f docker-compose.yml up --build --force-recreate -d'
+        sh 'docker compose up -d --force-recreate --no-deps --build react-app'
       }
     }
     success {
