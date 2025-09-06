@@ -139,7 +139,7 @@ function Login() {
                                     </Row>
                                     <Row className="row row-cols-md-12 d-flex justify-content-end">
                                         <Col className="d-grid gap-2" md={4}>
-                                            <Button variant="secondary" size="md">Reset</Button>
+                                            <Button variant="secondary" size="md">Reset1</Button>
                                         </Col>
                                         <Col className="d-grid gap-2" md={4}>
                                             <Button type="submit" variant="success" size="md">Login</Button>
