@@ -13,7 +13,7 @@ pipeline {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
       dir('core-dependency') {
-        sh 'docker compose up -d --force-recreate --no-deps --build react-app'
+        sh 'docker compose up -d --no-deps --build --force-recreate react-app'
       }
     }
     success {
