@@ -13,7 +13,8 @@ pipeline {
     always {
       echo 'Cleaning up and rebuilding Docker Compose containers'
       dir('core-dependency') {
-        sh 'chmod 644 /var/jenkins_home/workspace/Checklist/core-dependency/nginx/checklist.conf'
+        sh 'chmod 644 nginx/checklist.conf'
+        sh 'ls -l nginx/checklist.conf'
         sh 'docker compose up -d --build --force-recreate --no-deps react-app'
       }
     }
