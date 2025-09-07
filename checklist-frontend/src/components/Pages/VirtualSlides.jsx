@@ -921,7 +921,7 @@ function VirtualSlides(props) {
                   </Col>
 
                   <Col className="col-sm-12 col-md-12 col-xs-12 col-lg-12 list-summary text-center mt-3">
-                    <span className="yesterday">{tr.isYesterdaylistdate === slideContent ? 'What did you do yesterday?' : ''}</span>
+                    <span className="yesterday">{tr.isYesterdaylistdate === slideContent ? 'What did you do yesterday and ?' : ''}</span>
                     <span className="today">{tr.isTodaylistdate === slideContent ? 'What will you do Today?' : ''}</span>
                     <span className="tomorrow">{tr.isTomorrowlistdate === slideContent ? 'Works Planned for Tomorrow' : ''}</span>
                     <span>&nbsp;</span>
