@@ -14,7 +14,7 @@ services:
       ports:
         - 3002:80
       volumes:
-       - ./nginx/checklist.conf:/etc/nginx/conf.d/
+       - react-checklist/core-dependecny/nginx/checklist.conf:/etc/nginx/conf.d/default.conf
        - ../checklist-backend:/var/www/html/checklistv2/api
 
   react-mysql:
