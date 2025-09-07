@@ -15,7 +15,7 @@ pipeline {
       dir('core-dependency') {
         sh 'chmod 644 nginx/checklist.conf'
         sh 'ls -l nginx/checklist.conf'
-        //sh 'docker compose up -d --build --force-recreate --no-deps react-app'
+        sh 'docker compose up -d --build --force-recreate --no-deps react-app'
       }
     }
     success {
